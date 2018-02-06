@@ -1,6 +1,8 @@
 package SortingAlgos;
 
-public class QuickSort {
+import SimpleSorts.SortingMethod;
+
+public class QuickSort extends SortingMethod {
 
     public static void main(String[] args) {
 
@@ -13,14 +15,7 @@ public class QuickSort {
         qs.print(array);
     }
 
-    private void print(int[] array) {
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
-        }
-
-        System.out.println();
-    }
 
     private void sort(int[] array, int startIndex, int endIndex) {
 
@@ -62,5 +57,10 @@ public class QuickSort {
     public  void sort(int[] array) {
 
         sort(array, 0, array.length -1);
+    }
+
+    @Override
+    protected void sort(int[] array, boolean isAscending) {
+
     }
 }
