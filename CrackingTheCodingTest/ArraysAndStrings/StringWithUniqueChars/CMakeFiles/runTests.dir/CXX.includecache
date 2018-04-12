@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ranadewa/GITHUB/Algorithms/CrackingTheCodingTest/ArraysAndStrings/StringWithUniqueChars/Main.cpp
+string
+-
+iostream
+-
+unordered_map
+-
+
+/home/ranadewa/GITHUB/Algorithms/CrackingTheCodingTest/ArraysAndStrings/StringWithUniqueChars/test.cpp
+Main.cpp
+/home/ranadewa/GITHUB/Algorithms/CrackingTheCodingTest/ArraysAndStrings/StringWithUniqueChars/Main.cpp
+gtest/gtest.h
+-
+

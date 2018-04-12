@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ranadewa/GITHUB/Algorithms/CrackingTheCodingTest/ReverseNullTerminateString/Main.cpp
+iostream
+-
+string.h
+-
+
+/home/ranadewa/GITHUB/Algorithms/CrackingTheCodingTest/ReverseNullTerminateString/test.cpp
+Main.cpp
+/home/ranadewa/GITHUB/Algorithms/CrackingTheCodingTest/ReverseNullTerminateString/Main.cpp
+gtest/gtest.h
+-
+
