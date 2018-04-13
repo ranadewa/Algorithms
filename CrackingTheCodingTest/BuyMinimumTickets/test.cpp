@@ -7,17 +7,6 @@ int main(int argc, char **argv) {
 }
 
 
-TEST(isPermutation, initTests) { 
-
-
-	ASSERT_EQ(true, isPermutation("ABC", "BCA"));
-
-	ASSERT_EQ(false, isPermutation("ABC", "BCAB"));
-
-	ASSERT_EQ(true, isPermutation("ABC=-0", "B=C-A0"));
-
-}
-
 /*
 TEST(InitalValueTest, checkRandNum) { 
 
