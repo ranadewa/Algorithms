@@ -70,8 +70,6 @@ private:
 
 		char operation = operationStack.pop();
 
-		cout << first << operation  <<  second << endl;
-
 		int result = 0;
 
 		if (operation == '+')
