@@ -75,3 +75,94 @@ TEST(PathTest, initialTet) {
 
 	ASSERT_EQ(false, p.hasPathTo(8));
 }
+
+
+TEST(BFSPathFinderTest, initialTet) { 
+
+	Graph g(10);
+
+	g.addEdge(0,6);
+	g.addEdge(0,2);
+	g.addEdge(0,1);
+	g.addEdge(0,5);
+	g.addEdge(6,4);
+	g.addEdge(5,4);
+	g.addEdge(5,3);
+	g.addEdge(3,4);
+	g.addEdge(7,8);
+
+	BFSPathFinder  p(g, 0);
+
+	ASSERT_EQ(9, g.edgeCount());
+
+
+	ASSERT_EQ(true, p.hasPathTo(6));
+
+	ASSERT_EQ(true, p.hasPathTo(3));
+
+	ASSERT_EQ(false, p.hasPathTo(8));
+}
+
+TEST(ConnectedComponentsTest, initialTest) { 
+
+	Graph g(15);
+
+	g.addEdge(0,6);
+	g.addEdge(0,2);
+	g.addEdge(0,1);
+	g.addEdge(0,5);
+	g.addEdge(6,4);
+	g.addEdge(5,4);
+	g.addEdge(5,3);
+	g.addEdge(3,4);
+	g.addEdge(7,8);
+
+	g.addEdge(3,11);
+	g.addEdge(11,12);
+
+	 ConnectedComponents  p(g);
+
+	//ASSERT_EQ(9, g.edgeCount());
+
+
+	 ASSERT_EQ(true, p.isConnected(0, 4));
+
+	 ASSERT_EQ(true, p.isConnected(0, 11));
+
+	 ASSERT_EQ(false, p.isConnected(0,7));
+}
+
+TEST(BFSPathFinderTest, initialTestExtended) { 
+
+	Graph g(15);
+
+	g.addEdge(0,6);
+	g.addEdge(0,2);
+	g.addEdge(0,1);
+	g.addEdge(0,5);
+	g.addEdge(6,4);
+	g.addEdge(5,4);
+	g.addEdge(5,3);
+	g.addEdge(3,4);
+	g.addEdge(7,8);
+
+	g.addEdge(3,11);
+	g.addEdge(11,12);
+
+	BFSPathFinder  p(g, 0);
+
+
+	//	ASSERT_EQ(9, g.edgeCount());
+
+
+	ASSERT_EQ(true, p.hasPathTo(6));
+
+	ASSERT_EQ(true, p.hasPathTo(3));
+
+	ASSERT_EQ(false, p.hasPathTo(8));
+
+	cout << "Test Done" << endl;
+
+}
+
+
