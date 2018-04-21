@@ -347,6 +347,132 @@ void operatorOverloadTest(){
 	cout << " temp.x=" << temp.x << " temp.y=" << temp.y << endl;
 }
 
+class CopyCostruct{
+
+public:
+	CopyCostruct() : ptr("Hello World\n"){CPF; cout <<ptr; };
+
+	CopyCostruct( const CopyCostruct &); // CopyConstructor
+
+	CopyCostruct & operator = (const CopyCostruct &); // CopyAssignment
+
+private: 
+	char * ptr = nullptr;
+};
+
+CopyCostruct::CopyCostruct(const CopyCostruct & object){
+
+	CPF;	
+}
+
+CopyCostruct& CopyCostruct::operator = (const CopyCostruct& object){
+
+	CPF;
+
+	return *this;
+}
+
+void copyConstructorTest(){
+	CPF;	
+
+	cout<<"CopyCostruct a;" << endl;
+	CopyCostruct a;
+
+	cout<<"CopyCostruct b(a);" << endl;
+	CopyCostruct b(a);
+
+	cout<<"CopyCostruct c = b;" << endl;
+	CopyCostruct c = b;
+
+	cout <<" c = a" << endl;
+	c = a;
+}
+
+class MoveConstruct{
+
+public: 
+	MoveConstruct();
+	MoveConstruct(MoveConstruct&&); // move constructor
+	MoveConstruct& operator= (MoveConstruct && ); // move Assignment
+
+};
+
+MoveConstruct::MoveConstruct(){
+	CPF;
+}
+
+MoveConstruct::MoveConstruct(MoveConstruct&& object){
+	CPF;
+}
+
+MoveConstruct& MoveConstruct::operator = (MoveConstruct && object){
+	CPF;
+
+	return * this;
+}
+
+MoveConstruct getObject(){
+
+	return MoveConstruct();
+}
+
+void moveConstructorTest() {
+
+	CPF;
+	cout << " " << endl;
+ 	MoveConstruct a;
+
+ 	cout << "MoveConstruct b = a" << endl;
+ 	//MoveConstruct b = a;
+
+ 	cout << "MoveConstruct b = MoveConstruct();" << endl;
+ 	MoveConstruct b = MoveConstruct();
+
+ 	cout << " " << endl;
+ 	MoveConstruct c = getObject();
+}
+
+namespace castTest{
+
+class A{
+
+public:
+	A () { CPF;}
+};
+
+class B{
+
+public:
+	 // conversion from A (constructor):
+	B (const A &) {  CPF; }
+
+	 // conversion from A (assignment):
+	B& operator = (const A &){ CPF; return *this;}
+
+	 // conversion to A (type-cast operator)
+
+	operator A() { CPF; return A();}
+};
+
+void implicitClassCastTest(){
+
+	CPF;
+
+	cout << "A a;" << endl;
+	A a;
+
+	cout << "B b(a);" << endl;
+	B b(a);
+
+	cout << "b=a;" << endl;
+	b = a;
+
+	cout << "a=b;" << endl;
+	a = b;
+}
+
+}
+
 int main(int argc, char **argv) {
 
 
@@ -365,6 +491,9 @@ int main(int argc, char **argv) {
 	enumAndEnumClassTest();
 	memberInitialisationInConstructorTest();
 	operatorOverloadTest();
+	copyConstructorTest();
+	moveConstructorTest();
+	castTest::implicitClassCastTest();
 
 }
 
