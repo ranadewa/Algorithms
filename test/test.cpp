@@ -497,10 +497,3 @@ int main(int argc, char **argv) {
 
 }
 
-
-/*
-TEST(InitalValueTest, checkRandNum) { 
-sss	
-		ASSERT_EQ('Z', testMap[rand()]);
-}
-*/

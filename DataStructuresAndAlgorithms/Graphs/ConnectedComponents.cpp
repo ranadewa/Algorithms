@@ -12,7 +12,7 @@ public:
 	~ConnectedComponents(){
 
 		delete [] connnectedArray;
-		delete [] makedArray;
+		delete [] makedArray;	
 	}
 
 
